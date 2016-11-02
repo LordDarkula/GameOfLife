@@ -28,10 +28,7 @@ def number_neighbors(grid, location):
 
     for n_location in neighbors(location):
         if grid.get(n_location, (False, False))[0]:
-            print(grid.get(n_location, (False, False)), "loc", n_location, num_neighbors)
             num_neighbors += 1
-    if 2 <= num_neighbors <= 3:
-        print(num_neighbors, location)
 
     return num_neighbors
 
@@ -49,7 +46,6 @@ def set_will_die(grid):
         new_grid.update({location:(cell[0], 2 <= number_neighbors(grid, location) <= 3)})
         for n_location in neighbors(location):
             if number_neighbors(grid, n_location) == 3:
-                print(n_location)
                 new_grid.update({n_location:(False, True)})
 
     return new_grid
