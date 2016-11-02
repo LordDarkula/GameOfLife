@@ -1,5 +1,16 @@
-from copy import deepcopy
+"""
+Implementation of Conway's game of Life
+with a dictionary. To ise, create dictionary with
+starting position and set it to
+``set_will_dfie(dict)`` then ``update(dict)``
+to get a dictionary representing the
+next position. Repeat the process to
+to keep cells moving.
 
+:Author: Aubhro Sengupta
+"""
+
+# Used for making a row of 3 living cells starting position
 row_of_three = {(0, 0):(True, False), (1, 0):(True, False), (2, 0):(True, False)}
 
 def neighbors(location):
@@ -58,10 +69,9 @@ def update(grid):
 
     :type: grid: dict
     """
-    new_grid = deepcopy(grid)
+    new_grid = {}
     for location, cell in grid.items():
-        new_grid[location] = (cell[1], False)
-
+        new_grid.update({location:(cell[1], False)})
 
     return new_grid
 
