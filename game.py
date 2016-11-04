@@ -12,6 +12,8 @@ to keep cells moving.
 
 # Used for making a row of 3 living cells starting position
 row_of_three = {(0, 0):(True, False), (1, 0):(True, False), (2, 0):(True, False)}
+toad = {(3, 3):(True, False), (3, 4):(True, False), (3, 5):(True, False),
+        (4, 4):(True, False), (4, 5):(True, False), (4, 6):(True, False)}
 
 def neighbors(location):
     """
